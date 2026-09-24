@@ -1,14 +1,390 @@
 <!doctype html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfólio pessoal de Albano Nongava Lopes Bartolomeu — Desenvolvimento de Software, Redes de Computadores e Tecnologia." />
-    <meta name="theme-color" content="#07111f" />
-    <title>Albano Nongava Lopes Bartolomeu | Portfólio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio pessoal de Albano Nongava Lopes Bartolomeu — Desenvolvimento de Software, Redes de Computadores e Tecnologia." />
+  <meta name="theme-color" content="#07111f" />
+  <title>Albano Nongava Lopes Bartolomeu | Portfólio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Sprite de ícones (Lucide, inline) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M12 12h.01"/><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M22 13a18.15 18.15 0 0 1-20 0"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+    <symbol id="i-graduation" viewBox="0 0 24 24"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  </svg>
+
+  <div class="site">
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="brand" href="#inicio">
+          <span class="brand-mark">AN</span>
+          <span>Albano.</span>
+        </a>
+
+        <button class="menu-button" id="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon icon-open" width="22" height="22" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close" width="22" height="22" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+
+        <nav class="nav-links" id="nav-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#redes">Redes</a>
+          <a href="#formacao">Formação</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contacto">Contacto</a>
+          <a class="nav-cta" href="#contacto">
+            Contactar <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- INÍCIO -->
+      <section id="inicio" class="hero section">
+        <div class="hero-glow hero-glow-one"></div>
+        <div class="hero-glow hero-glow-two"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">
+              <span class="status-dot"></span>
+              Disponível para novos desafios
+            </div>
+            <h1>
+              Albano Nongava
+              <span>Lopes Bartolomeu</span>
+            </h1>
+            <p class="hero-role">Desenvolvedor <b>·</b> Técnico de Redes de Computadores</p>
+            <p class="hero-text">
+              Tecnologia, desenvolvimento e soluções para problemas reais.
+              Construo soluções digitais e tenho especial interesse por
+              desenvolvimento de software e redes de computadores.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#projetos">
+                Ver projetos <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+              </a>
+              <a class="button secondary" href="#contacto">Entrar em contacto</a>
+            </div>
+            <div class="hero-meta">
+              <span><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-code"/></svg> Desenvolvimento</span>
+              <span><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-network"/></svg> Redes</span>
+              <span><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-sparkles"/></svg> Aprendizagem contínua</span>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal delay">
+            <div class="profile-orbit orbit-one"></div>
+            <div class="profile-orbit orbit-two"></div>
+            <div class="photo-card">
+              <img src="images/profile.jpg" alt="Albano Nongava Lopes Bartolomeu" />
+              <div class="photo-caption">
+                <strong>Albano Nongava</strong>
+                <span>Desenvolvedor · Redes</span>
+              </div>
+            </div>
+            <div class="profile-card">
+              <div class="profile-card-top">
+                <span class="mini-dot"></span>
+                <span class="mini-dot"></span>
+                <span class="mini-dot"></span>
+                <span class="terminal-label">albano.dev</span>
+              </div>
+              <div class="terminal-code">
+                <p><span class="code-purple">const</span> developer = {</p>
+                <p>&nbsp;&nbsp;name: <span class="code-green">"Albano"</span>,</p>
+                <p>&nbsp;&nbsp;focus: <span class="code-green">"Technology"</span>,</p>
+                <p>&nbsp;&nbsp;skills: [</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"React"</span>, <span class="code-green">"PHP"</span>,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"Networks"</span></p>
+                <p>&nbsp;&nbsp;],</p>
+                <p>&nbsp;&nbsp;mindset: <span class="code-green">"Keep learning"</span></p>
+                <p>}</p>
+                <span class="cursor"></span>
+              </div>
+              <div class="profile-card-bottom">
+                <span><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-server"/></svg> Software</span>
+                <span><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-wifi"/></svg> Networks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section id="sobre" class="section">
+        <div class="container two-column">
+          <div>
+            <p class="section-kicker">01 / Sobre mim</p>
+            <h2>Construir, aprender e resolver.</h2>
+          </div>
+          <div class="about-copy">
+            <p>
+              Sou estudante de Engenharia Informática e Sistemas de Informação,
+              com formação técnica em informática e conhecimentos em
+              desenvolvimento de software, redes de computadores e tecnologias
+              digitais.
+            </p>
+            <p>
+              Gosto de transformar necessidades em soluções práticas, aprender
+              novas tecnologias e trabalhar em equipa para resolver problemas.
+            </p>
+            <div class="value-grid">
+              <div><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-code"/></svg><strong>Desenvolvimento</strong><span>Web e sistemas</span></div>
+              <div><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-network"/></svg><strong>Redes</strong><span>Ethernet e Wi-Fi</span></div>
+              <div><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-sparkles"/></svg><strong>Aprendizagem</strong><span>Evolução contínua</span></div>
+              <div><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-check"/></svg><strong>Problemas</strong><span>Foco em soluções</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HABILIDADES -->
+      <section id="habilidades" class="section section-alt">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">02 / Habilidades</p>
+              <h2>Tecnologias que utilizo.</h2>
+            </div>
+            <p>Uma base prática em desenvolvimento, dados e ferramentas de trabalho.</p>
+          </div>
+
+          <div class="skills-layout">
+            <div class="skill-panel">
+              <div class="panel-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-code"/></svg></div>
+              <h3>Desenvolvimento</h3>
+              <div class="tag-list">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">MySQL</span>
+              </div>
+            </div>
+
+            <div class="skill-panel">
+              <div class="panel-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-database"/></svg></div>
+              <h3>Dados &amp; Ferramentas</h3>
+              <div class="tag-list">
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Git</span>
+                <span class="tech-tag">GitHub</span>
+                <span class="tech-tag">VS Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REDES -->
+      <section id="redes" class="section">
+        <div class="container network-section">
+          <div class="network-copy">
+            <p class="section-kicker">03 / Redes</p>
+            <h2>Técnico de Redes de Computadores.</h2>
+            <p>
+              Conhecimentos em implementação e configuração de redes Ethernet
+              e Wi-Fi, infraestrutura, endereçamento, serviços e segurança.
+            </p>
+            <div class="network-badge">
+              <svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-shield-check"/></svg>
+              Infraestrutura &amp; Segurança
+            </div>
+          </div>
+          <div class="network-list">
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Modelo OSI e TCP/IP</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Endereçamento IP e IPv4</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>IP público e privado</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Máscaras de rede e Sub-redes</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>VLSM</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>DHCP e DNS</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Routers e Switches</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Ethernet e Wi-Fi / WLAN</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Padrões de cabeamento</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Fibra óptica</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Segurança de redes</span></div>
+            <div class="network-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg><span>Comandos de rede</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMAÇÃO -->
+      <section id="formacao" class="section section-alt">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">04 / Formação</p>
+              <h2>Formação e aprendizagem.</h2>
+            </div>
+          </div>
+
+          <div class="education-grid">
+            <article class="education-card featured">
+              <div class="education-icon"><svg class="icon" width="24" height="24" aria-hidden="true"><use href="#i-graduation"/></svg></div>
+              <p class="education-label">Em frequência</p>
+              <h3>Engenharia Informática e Sistemas de Informação</h3>
+              <p>Frequência do 3.º ano — INSUTEC.</p>
+            </article>
+
+            <article class="education-card">
+              <div class="education-icon"><svg class="icon" width="24" height="24" aria-hidden="true"><use href="#i-briefcase"/></svg></div>
+              <p class="education-label">Formação técnica</p>
+              <h3>Técnico Médio de Informática</h3>
+              <p>Instituto Politécnico Industrial de Luanda — IPIL (Makarenko).</p>
+            </article>
+          </div>
+
+          <div class="courses">
+            <h3>Cursos e formação complementar</h3>
+            <div class="course-grid">
+              <div class="course-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg>Redes de Computadores — MSq Tecnologias</div>
+              <div class="course-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg>Curso de Inglês</div>
+              <div class="course-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg>Bootcamp — IPVX</div>
+              <div class="course-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg>Infraestrutura de Redes</div>
+              <div class="course-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg>Gestão de Projetos de TI</div>
+              <div class="course-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg>Power BI</div>
+              <div class="course-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg>DevOps</div>
+              <div class="course-item"><svg class="icon" width="17" height="17" aria-hidden="true"><use href="#i-check"/></svg>Backup e Replicação de Dados</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJETOS -->
+      <section id="projetos" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">05 / Projetos</p>
+              <h2>Projetos em destaque.</h2>
+            </div>
+            <p>Alguns dos projetos e soluções desenvolvidos ao longo da minha jornada.</p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-number">01</div>
+              <div class="project-icon"><svg class="icon" width="23" height="23" aria-hidden="true"><use href="#i-globe"/></svg></div>
+              <h3>Sistema de Facturação</h3>
+              <p>Desenvolvimento de um sistema para apoiar processos de facturação e gestão.</p>
+              <div class="project-tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+              <button class="project-link" type="button">Ver projeto <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-external"/></svg></button>
+            </article>
+
+            <article class="project-card">
+              <div class="project-number">02</div>
+              <div class="project-icon"><svg class="icon" width="23" height="23" aria-hidden="true"><use href="#i-globe"/></svg></div>
+              <h3>Websites</h3>
+              <p>Desenvolvimento de websites modernos, responsivos e orientados para diferentes necessidades.</p>
+              <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div>
+              <button class="project-link" type="button">Ver projeto <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-external"/></svg></button>
+            </article>
+
+            <article class="project-card">
+              <div class="project-number">03</div>
+              <div class="project-icon"><svg class="icon" width="23" height="23" aria-hidden="true"><use href="#i-globe"/></svg></div>
+              <h3>Plataforma de Venda de Bilhetes</h3>
+              <p>Desenvolvimento de uma plataforma para venda e gestão de bilhetes.</p>
+              <div class="project-tags"><span>Web</span><span>PHP</span><span>MySQL</span></div>
+              <button class="project-link" type="button">Ver projeto <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-external"/></svg></button>
+            </article>
+
+            <article class="project-card">
+              <div class="project-number">04</div>
+              <div class="project-icon"><svg class="icon" width="23" height="23" aria-hidden="true"><use href="#i-globe"/></svg></div>
+              <h3>Sistema Administrativo de Anúncios</h3>
+              <p>Desenvolvimento de uma solução administrativa para gestão de anúncios.</p>
+              <div class="project-tags"><span>React</span><span>PHP</span><span>MySQL</span></div>
+              <button class="project-link" type="button">Ver projeto <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-external"/></svg></button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto" class="section contact-section">
+        <div class="container contact-card">
+          <div class="contact-copy">
+            <p class="section-kicker">06 / Contacto</p>
+            <h2>Vamos criar algo juntos?</h2>
+            <p>
+              Estou aberto a novos projetos, oportunidades e desafios
+              relacionados com tecnologia, desenvolvimento e redes.
+            </p>
+            <div class="contact-links">
+              <a href="mailto:devalbano58@gmail.com"><svg class="icon" width="18" height="18" aria-hidden="true"><use href="#i-mail"/></svg> devalbano58@gmail.com</a>
+              <!-- Substitua o "#" pelo link do seu LinkedIn (e adicione o GitHub se quiser) -->
+              <a href="#"><svg class="icon" width="18" height="18" aria-hidden="true"><use href="#i-linkedin"/></svg>Albano Lopes</a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" data-email="devalbano58@gmail.com">
+            <label>
+              Nome
+              <input type="text" name="nome" placeholder="O seu nome" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="seuemail@exemplo.com" required />
+            </label>
+            <label>
+              Mensagem
+              <textarea name="mensagem" rows="5" placeholder="Como posso ajudar?" required></textarea>
+            </label>
+            <button class="button primary" type="submit">
+              Enviar mensagem <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <a class="brand" href="#inicio">
+            <span class="brand-mark">AN</span>
+            <span>Albano.</span>
+          </a>
+          <p>Desenvolvimento · Redes · Tecnologia</p>
+        </div>
+        <div class="footer-right">
+          <a href="#inicio"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-user"/></svg> Voltar ao início</a>
+          <span>© 2026 Albano Nongava Lopes Bartolomeu</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
 </html>

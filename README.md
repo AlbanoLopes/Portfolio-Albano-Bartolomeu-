@@ -1,33 +1,33 @@
 # Portfólio — Albano Nongava Lopes Bartolomeu
 
-Portfólio pessoal criado com React + Vite + TypeScript.
+Site estático feito só com **HTML, CSS e JavaScript** (sem React, Vite, Node ou build).
 
-## Executar localmente
+## Como abrir
 
-```bash
-npm install
-npm run dev
+Basta abrir o `index.html` no browser (duplo clique). Não é preciso instalar nada.
+
+## Estrutura
+
 ```
-
-Depois abra o endereço indicado pelo Vite.
-
-## Criar build
-
-```bash
-npm run build
+index.html      → todo o conteúdo da página
+css/styles.css  → estilos
+js/main.js      → menu mobile e formulário de contacto
+images/         → profile.jpg
 ```
 
 ## Onde editar
 
-A maior parte do conteúdo pessoal está em `src/App.tsx`.
+- Textos, projetos, cursos e competências: directamente em `index.html`.
+- LinkedIn: procure `<a href="#">` na secção de contacto e ponha o seu link.
+- Cores: variáveis `--accent`, `--accent-2`, etc. no topo de `css/styles.css`.
 
-Procure pelos placeholders:
-- `SEU_EMAIL@example.com`
-- `GitHub — adicionar link`
-- `LinkedIn — adicionar link`
+## Formulário de contacto
 
-Também pode substituir os projetos, cursos e competências diretamente nas listas no início de `src/App.tsx`.
+Como o site não tem servidor, o botão "Enviar mensagem" abre o programa de email do
+visitante com a mensagem preenchida. Para receber mensagens directamente, pode ligar
+o formulário a um serviço como Formspree ou Web3Forms.
 
 ## Publicação
 
-O projeto pode ser publicado em serviços como Vercel, Netlify ou GitHub Pages.
+Funciona em qualquer alojamento estático: GitHub Pages, Netlify, Vercel, ou qualquer
+hospedagem tradicional (basta enviar a pasta).
